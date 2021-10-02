@@ -1,5 +1,15 @@
 # practice-dnn
-Pytorchを用いたDNNの実装の練習
+* Pytorchを用いたDNNの実装の練習（DNNでXORを実現）
+  * (入力1, 入力2) -> 出力
+    * (0, 0) -> 0
+    * (0, 1) -> 1
+    * (1, 0) -> 1
+    * (1, 1) -> 0
+  * 入力にはノイズを付加している（
+  <a href="https://www.codecogs.com/eqnedit.php?latex=0&space;\pm&space;\epsilon" target="_blank"><img src="https://latex.codecogs.com/gif.latex?0&space;\pm&space;\epsilon" title="0 \pm \epsilon" /></a> 
+  or 
+  <a href="https://www.codecogs.com/eqnedit.php?latex=1\pm&space;\epsilon" target="_blank"><img src="https://latex.codecogs.com/gif.latex?1\pm&space;\epsilon" title="1\pm \epsilon" /></a>）
+  
 
 ## Usage
 
