@@ -65,4 +65,4 @@ if __name__ == "__main__":
 
     # torch.save(object, filename). For the filename, any extension can be used
     state_dict = model.state_dict()  # 各層のパラメータが保存されている．
-    torch.save(state_dict, "our_model.tar")
+    torch.save(state_dict, "./output/our_model.tar")

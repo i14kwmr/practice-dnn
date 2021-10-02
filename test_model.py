@@ -38,7 +38,7 @@ def test_model(model, data_loader):
 if __name__ == "__main__":
 
     # Load state dict from the disk
-    state_dict = torch.load("our_model.tar")  # torch.load: 保存したパラメータを読み込み(state)
+    state_dict = torch.load("./output/our_model.tar")  # torch.load: 保存したパラメータを読み込み(state)
 
     # Create a new model and load the state
     model = SimpleClassifier(num_inputs=2, num_hidden=4, num_outputs=1)  # 初期化されたモデルの作成
