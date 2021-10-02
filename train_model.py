@@ -1,7 +1,7 @@
 import torch
 import torch.nn as nn
 import torch.utils.data as data
-from tqdm.notebook import tqdm  # Progress bar
+from tqdm import tqdm  # Progress bar
 
 from cls_data_generator import XORDataset
 from cls_model import SimpleClassifier
