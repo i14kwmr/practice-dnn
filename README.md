@@ -13,28 +13,31 @@
 
 ## Usage
 
+### 準備
 1. [本リポジトリ](https://github.com/i14kwmr/practice-dnn)をclone
 ```
 $ git clone git@github.com:i14kwmr/practice-dnn.git
 ```
 
-2. 学習したパラメータを書き出せるように権限を変更（要注意，他の方法を探すべき）
-```
-$ chmod 0777 practice-dnn/
-```
-
-3. Dockerで環境を構築
+2. フォルダに移動
 ```
 $ cd practice-dnn
+```
+
+3. 学習したパラメータを書き出せるようにフォルダを作成し権限を変更
+```
+$ mkdir output
+$ chmod 0777 output
+```
+
+4. Dockerで環境を構築しワークスペースに移動
+```
 $ docker-compose up -d --build
 $ docker compose exec python3 bash
-```
-
-4. ワークスペースに移動
-```
 $ cd practice-dnn
 ```
 
+### 実行
 5. 学習
 ```
 $ python train_model.py
