@@ -10,8 +10,14 @@ from cls_model import SimpleClassifier
 def train_model(model, optimizer, data_loader, loss_module, num_epochs=100):
 
     # GPUが割り当て可能 -> GPUを割り当て，GPUが割り当て不可能 -> CPUを割り当て
-    device = torch.device("cuda") if torch.cuda.is_available() else torch.device("cpu")
-    # print("Device", device)
+    # その後，seed値を設定する．
+    if torch.cuda.is_available():
+        device = torch.device("cuda")
+        torch.cuda.manual_seed(42)
+        torch.cuda.manual_seed_all(42)
+    else:
+        torch.device("cpu")
+        torch.manual_seed(42)
 
     # Set model to train mode
     model.train()

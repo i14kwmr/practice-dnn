@@ -9,8 +9,14 @@ from cls_model import SimpleClassifier
 def test_model(model, data_loader):
 
     # GPUが割り当て可能 -> GPUを割り当て，GPUが割り当て不可能 -> CPUを割り当て
-    device = torch.device("cuda") if torch.cuda.is_available() else torch.device("cpu")
-    # print("Device", device)
+    # その後，seed値を設定する．
+    if torch.cuda.is_available():
+        device = torch.device("cuda")
+        torch.cuda.manual_seed(42)
+        torch.cuda.manual_seed_all(42)
+    else:
+        torch.device("cpu")
+        torch.manual_seed(42)
 
     # Set model to eval mode
     model.eval()
@@ -38,7 +44,9 @@ def test_model(model, data_loader):
 if __name__ == "__main__":
 
     # Load state dict from the disk
-    state_dict = torch.load("./output/our_model.tar")  # torch.load: 保存したパラメータを読み込み(state)
+    state_dict = torch.load(
+        "./output/our_model.tar"
+    )  # torch.load: 保存したパラメータを読み込み(state)
 
     # Create a new model and load the state
     model = SimpleClassifier(num_inputs=2, num_hidden=4, num_outputs=1)  # 初期化されたモデルの作成
