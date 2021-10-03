@@ -1,4 +1,5 @@
 # practice-dnn
+参考: PyTorch Lightning「[TUTORIAL 1: INTRODUCTION TO PYTORCH](https://pytorch-lightning.readthedocs.io/en/latest/notebooks/course_UvA-DL/01-introduction-to-pytorch.html)」
 * Pytorchを用いたDNNの実装の練習（DNNでXORを実現）
   * (入力1, 入力2) -> 出力
     * (0, 0) -> 0
