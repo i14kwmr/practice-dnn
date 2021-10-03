@@ -15,7 +15,7 @@ def test_model(model, data_loader):
         torch.cuda.manual_seed(42)
         torch.cuda.manual_seed_all(42)
     else:
-        torch.device("cpu")
+        device = torch.device("cpu")
         torch.manual_seed(42)
 
     # Set model to eval mode
